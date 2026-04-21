@@ -1,0 +1,245 @@
+<!-- Task 6: Real-world Simulation - Clone a
+Webpage
+
+Description:
+Choose a simple webpage, like a product
+or company landing page, and recreate its
+layout and design using HTML and CSS.
+Add interactivity with JavaScript, such as a
+button or form functionality, to make it
+more dynamic.
+Skills:
+
+HTML
+CSS
+JavaScript -->
+
+<!-- -------------------------------------------------------- -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Clone</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+line-height:1.6;
+}
+
+/* Navbar */
+header{
+background:#222;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* Hero Section */
+.hero{
+background:#f4f4f4;
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 30px;
+background:blue;
+color:white;
+border:none;
+font-size:18px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.hero button:hover{
+background:darkblue;
+}
+
+/* Features */
+.features{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:50px 20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#eee;
+padding:25px;
+width:280px;
+text-align:center;
+border-radius:10px;
+}
+
+/* Contact Form */
+.contact{
+background:#ddd;
+padding:50px 20px;
+text-align:center;
+}
+
+.contact input{
+width:300px;
+max-width:100%;
+padding:10px;
+margin:10px;
+}
+
+.contact button{
+padding:12px 20px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+/* Footer */
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+<h2>TechProduct</h2>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+
+<h1>Smart Tech for Modern Life</h1>
+
+<p>Experience innovation with our latest product solutions.</p>
+
+<button onclick="showMessage()">
+Learn More
+</button>
+
+</section>
+
+<!-- Features -->
+<section class="features">
+
+<div class="card">
+<h3>Fast Performance</h3>
+<p>High speed and optimized technology.</p>
+</div>
+
+<div class="card">
+<h3>Secure Platform</h3>
+<p>Built with strong security features.</p>
+</div>
+
+<div class="card">
+<h3>24/7 Support</h3>
+<p>Customer support anytime you need it.</p>
+</div>
+
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<br>
+
+<button onclick="submitForm()">
+Submit
+</button>
+
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2026 TechProduct. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+function showMessage(){
+
+alert("Welcome! Explore our product features.");
+
+}
+
+function submitForm(){
+
+let name=document.getElementById("name").value;
+
+if(name==""){
+alert("Please enter your name.");
+return;
+}
+
+alert("Thank you " + name + " for contacting us!");
+
+}
+
+</script>
+
+</body>
+</html>
