@@ -1,0 +1,170 @@
+<!-- Task 4: Build a simple quiz application using
+JavaScript.
+
+Description:
+
+Create a quiz application using JavaScript
+with at least 3 multiple-choice questions.
+Add functionality to move to the next
+question and display the score at the end.
+Ensure users cannot proceed without
+selecting an answer by adding basic
+validation.
+
+Skills: -
+
+Basics JavaScript
+DOM Manipulation -->
+
+<!-- ----------------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Quiz App</title>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+margin-top:50px;
+}
+
+.quiz-box{
+width:500px;
+margin:auto;
+padding:20px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+font-size:16px;
+cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="quiz-box">
+
+<h2 id="question"></h2>
+
+<div id="options"></div>
+
+<button onclick="nextQuestion()">Next</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+
+const quiz = [
+{
+question: "1. What does HTML stand for?",
+options: [
+"Hyper Text Markup Language",
+"High Tech Modern Language",
+"Home Tool Markup Language"
+],
+answer: "Hyper Text Markup Language"
+},
+
+{
+question: "2. Which language is used for styling web pages?",
+options: [
+"HTML",
+"CSS",
+"Python"
+],
+answer: "CSS"
+},
+
+{
+question: "3. Which language is used for webpage interactivity?",
+options: [
+"Java",
+"JavaScript",
+"C++"
+],
+answer: "JavaScript"
+}
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion(){
+
+document.getElementById("result").innerHTML="";
+
+let q = quiz[currentQuestion];
+
+document.getElementById("question").innerHTML = q.question;
+
+let optionsHTML = "";
+
+for(let i=0; i<q.options.length; i++){
+
+optionsHTML +=
+'<label>' +
+'<input type="radio" name="option" value="' + q.options[i] + '"> '
++ q.options[i] +
+'</label><br><br>';
+
+}
+
+document.getElementById("options").innerHTML = optionsHTML;
+
+}
+
+function nextQuestion(){
+
+let selectedOption =
+document.querySelector('input[name="option"]:checked');
+
+/* Validation */
+if(!selectedOption){
+alert("Please select an answer before proceeding.");
+return;
+}
+
+if(selectedOption.value === quiz[currentQuestion].answer){
+score++;
+}
+
+currentQuestion++;
+
+if(currentQuestion < quiz.length){
+
+loadQuestion();
+
+}
+else{
+
+document.getElementById("question").innerHTML =
+"Quiz Completed!";
+
+document.getElementById("options").innerHTML = "";
+
+document.getElementById("result").innerHTML =
+"Your Score: " + score + " / " + quiz.length;
+
+document.querySelector("button").style.display="none";
+
+}
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
