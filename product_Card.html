@@ -1,0 +1,91 @@
+<!-- Task 2: Styling a Product Card
+
+Description:
+Design a product card using HTML and CSS.
+Include an image, product name, price, and
+an "Add to Cart" button. Style the card with
+CSS to ensure proper alignment and add
+hover effects to the button for a polished
+look.
+Skills :
+
+HTML
+CSS -->
+
+<!------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Card</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.product-card{
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-card img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-name{
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.price{
+    font-size: 20px;
+    color: green;
+    margin-bottom: 15px;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+button:hover{
+    background-color: darkblue;
+}
+</style>
+
+</head>
+<body>
+
+<div class="product-card">
+    
+    <img src="WirelessHeadphones.jpeg" alt="Product Image">
+    
+    <h2 class="product-name">Wireless Headphones</h2>
+    
+    <p class="price">$89.90</p>
+    
+    <button>Add to Cart</button>
+
+</div>
+
+</body>
+</html>
